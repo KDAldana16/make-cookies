@@ -5,7 +5,6 @@
 // declare default variables
 let cookieCount = 0;
 
-
 // declare DOM variables
 let cookieCounter = document.getElementById('cookie-counter');
 let cookieClicker = document.getElementById('cookie-clicker');
@@ -15,10 +14,11 @@ cookieCounter.innerHTML = cookieCount;
 // every time a user clicks the button, their cookies are increased by the value of their clickPower
 cookieClicker.addEventListener("click", function() {
   cookieCount = cookieCount + clickPower;
+  cookieCounter.innerHTML = cookieCount;
   refreshCookieCount()
 })
 
-
+// refresh cookies
 let refreshCookieCount = function() {
   cookieCounter.innerHTML = cookieCount;
 }
@@ -113,10 +113,7 @@ let refreshGrandma = function() {
   grandmaMultiple.innerHTML = grandmaPower - 10;
 }
 
-window.setInterval(function(){
-  // executing code loop goes here
-}, numberOfMilliSeconds)
-
+// game loop
 let autoGrandmaStart = function() {
   let grandmaInt = window.setInterval(function(){
     cookieCount += grandmaPower;
@@ -173,6 +170,7 @@ let autoFacilityStart = function() {
     refreshCookieCount();
   }, 1000);
 }
+
 // refresh shop
 let refreshFacility = function() {
   facilityLevel.innerHTML = facilityLevelNumber
