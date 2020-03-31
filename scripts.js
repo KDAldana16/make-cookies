@@ -18,6 +18,7 @@ cookieClicker.addEventListener("click", function() {
   refreshCookieCount()
 })
 
+
 // refresh cookies
 let refreshCookieCount = function() {
   cookieCounter.innerHTML = cookieCount;
