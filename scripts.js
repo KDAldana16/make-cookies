@@ -138,7 +138,7 @@ let facilityMultiple = document.getElementById('facility-multiple');
 // buy a facility
 buyFacility.addEventListener("click", function() {
   // set autoLoop to false
-  facilityAuto = true;
+  facilityAuto = false;
 
   // make sure we have enough cookies
   if (cookieCount >= facilityPriceAmount) {
@@ -195,7 +195,7 @@ let christmasMultiple = document.getElementById('christmas-multiple');
 // buy a christmas
 buyChristmas.addEventListener("click", function() {
   // set autoLoop to false
-  christmasAuto = true;
+  christmasAuto = false;
 
   // make sure we have enough cookies
   if (cookieCount >= christmasPriceAmount) {
