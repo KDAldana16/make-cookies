@@ -27,7 +27,7 @@ let refreshCookieCount = function() {
 /********CLICK POWER************/
 
 // declare default variables
-let clickPower = 1;
+let clickPower = 5;
 let clickPowerPriceAmount = 50;
 let clickPowerLevelNumber = 1;
 
@@ -51,7 +51,7 @@ buyClickPower.addEventListener("click", function() {
     clickPowerPriceAmount = Math.floor(clickPowerPriceAmount * 1.33);
 
     // update Click Power
-    clickpower += 1 * Math.floor(clickPowerLevelNumber * 1.05);
+    clickPower += 1 * Math.floor(clickPowerLevelNumber * 1.05);
 
     // refresh shop item
     refreshPowerClick();
@@ -71,7 +71,7 @@ let refreshPowerClick = function() {
 // set default values
 let grandmaAuto = false;
 let grandmaPower = 50;
-let grandmaPriceAmount = 500;
+let grandmaPriceAmount = 100;
 let grandmaLevelNumber = 0;
 
 // declare DOM variables
@@ -125,8 +125,8 @@ let autoGrandmaStart = function() {
 
 // set default values
 let facilityAuto = false;
-let facilityPower = 2000;
-let facilityPriceAmount = 100000;
+let facilityPower = 100;
+let facilityPriceAmount = 150;
 let facilityLevelNumber = 0;
 
 // declare DOM variables
@@ -138,7 +138,7 @@ let facilityMultiple = document.getElementById('facility-multiple');
 // buy a facility
 buyFacility.addEventListener("click", function() {
   // set autoLoop to false
-  facilityAuto = false;
+  facilityAuto = true;
 
   // make sure we have enough cookies
   if (cookieCount >= facilityPriceAmount) {
@@ -176,4 +176,176 @@ let refreshFacility = function() {
   facilityLevel.innerHTML = facilityLevelNumber
   facilityPrice.innerHTML = facilityPriceAmount;
   facilityMultiple.innerHTML = facilityPower - 600;
+}
+
+/********CHRISTMAS************/
+
+// set default values
+let christmasAuto = false;
+let christmasPower = 150;
+let christmasPriceAmount = 200;
+let christmasLevelNumber = 0;
+
+// declare DOM variables
+let buyChristmas = document.getElementById('buy-christmas');
+let christmasPrice = document.getElementById('christmas-price');
+let christmasLevel = document.getElementById('christmas-level');
+let christmasMultiple = document.getElementById('christmas-multiple');
+
+// buy a christmas
+buyChristmas.addEventListener("click", function() {
+  // set autoLoop to false
+  christmasAuto = true;
+
+  // make sure we have enough cookies
+  if (cookieCount >= christmasPriceAmount) {
+    cookieCount -= christmasPriceAmount;
+    refreshCookieCount()
+
+  // upgrade power level
+  christmasLevelNumber += 1;
+
+  // update price
+  christmasPriceAmount = Math.floor(christmasPriceAmount * 1.33);
+
+  // update christmas power
+  christmasPower += 600 + Math.floor(christmasLevelNumber * 1.33);;
+
+  // turn autoFacility on!
+  christmasAuto = true
+  autoChristmasStart();
+
+  // refresh shop item
+  refreshChristmas();
+  }
+})
+
+// game loop
+let autoChristmasStart = function() {
+  let christmasInt = window.setInterval(function() {
+    cookieCount += christmasPower;
+    refreshCookieCount();
+  }, 1000);
+}
+
+// refresh shop
+let refreshChristmas = function() {
+  christmasLevel.innerHTML = christmasLevelNumber
+  christmasPrice.innerHTML = christmasPriceAmount;
+  christmasMultiple.innerHTML = christmasPower - 600;
+}
+
+/********VALENTINE'S DAY************/
+
+// set default values
+let valentinesAuto = false;
+let valentinesPower = 200;
+let valentinesPriceAmount = 250;
+let valentinesLevelNumber = 0;
+
+// declare DOM variables
+let buyValentines = document.getElementById('buy-valentines');
+let valentinesPrice = document.getElementById('valentines-price');
+let valentinesLevel = document.getElementById('valentines-level');
+let valentinesMultiple = document.getElementById('valentines-multiple');
+
+// buy a valentines
+buyValentines.addEventListener("click", function() {
+  // set autoLoop to false
+  valentinesAuto = false;
+
+  // make sure we have enough cookies
+  if (cookieCount >= valentinesPriceAmount) {
+    cookieCount -= valentinesPriceAmount;
+    refreshCookieCount()
+
+  // upgrade power level
+  valentinesLevelNumber += 1;
+
+  // update price
+  valentinesPriceAmount = Math.floor(valentinesPriceAmount * 1.33);
+
+  // update valentines power
+  valentinesPower += 600 + Math.floor(valentinesLevelNumber * 1.33);;
+
+  // turn autoValentines on!
+  valentinesAuto = true
+  autoValentinesStart();
+
+  // refresh shop item
+  refreshValentines();
+  }
+})
+
+// game loop
+let autoValentinesStart = function() {
+  let valentinesInt = window.setInterval(function() {
+    cookieCount += valentinesPower;
+    refreshCookieCount();
+  }, 1000);
+}
+
+// refresh shop
+let refreshValentines = function() {
+  valentinesLevel.innerHTML = valentinesLevelNumber
+  valentinesPrice.innerHTML = valentinesPriceAmount;
+  valentinesMultiple.innerHTML = valentinesPower - 600;
+}
+
+
+/********BIRTHDAY************/
+
+// set default values
+let birthdayAuto = false;
+let birthdayPower = 250;
+let birthdayPriceAmount = 300;
+let birthdayLevelNumber = 0;
+
+// declare DOM variables
+let buyBirthday = document.getElementById('buy-birthday');
+let birthdayPrice = document.getElementById('birthday-price');
+let birthdayLevel = document.getElementById('birthday-level');
+let birthdayMultiple = document.getElementById('birthday-multiple');
+
+// buy a birthday
+buyBirthday.addEventListener("click", function() {
+  // set autoLoop to false
+  birthdayAuto = true;
+
+  // make sure we have enough cookies
+  if (cookieCount >= birthdayPriceAmount) {
+    cookieCount -= birthdayPriceAmount;
+    refreshCookieCount()
+
+  // upgrade power level
+  birthdayLevelNumber += 1;
+
+  // update price
+  birthdayPriceAmount = Math.floor(birthdayPriceAmount * 1.33);
+
+  // update birthday power
+  birthdayPower += 600 + Math.floor(birthdayLevelNumber * 1.33);;
+
+  // turn autoBirthday on!
+  birthdayAuto = true
+  autoBirthdayStart();
+
+  // refresh shop item
+  refreshBirthday();
+  }
+})
+
+// game loop
+let autoBirthdayStart = function() {
+  let birthdayInt = window.setInterval(function() {
+    cookieCount += birthdayPower;
+    refreshCookieCount();
+  }, 1000);
+}
+
+// refresh shop
+let refreshBirthday = function() {
+  birthdayLevel.innerHTML = birthdayLevelNumber
+  birthdayPrice.innerHTML = birthdayPriceAmount;
+  birthdayMultiple.innerHTML = birthdayPower - 600;
 }

@@ -1,5 +1,33 @@
 h1 {
   text-weight: bold;
   text-font: roboto;
-  
+}
+
+button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  text-align: center;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.card-img-top {
+  width: 200px;
+  height: 350px;
+}
+
+.card-body {
+  background-color: #ffffff;
+}
+
+.card {
+  border-radius: rounded;
+}
+
+.background-color {
+  background-color: #dea5a4;
 }
