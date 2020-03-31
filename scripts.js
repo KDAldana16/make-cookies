@@ -350,7 +350,3 @@ let refreshBirthday = function() {
   birthdayPrice.innerHTML = birthdayPriceAmount;
   birthdayMultiple.innerHTML = birthdayPower - 600;
 }
-
-
-/**********STOP THE GAME LOOP ***************/
-ig.system.startRunLoop() and ig.system.stopRunLoop().
